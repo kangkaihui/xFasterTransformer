@@ -38,7 +38,7 @@ jobs:
       # (Optional) Please insert the IAPM ID of the application here
       # If you have more than 1 IAPM ID, please separate them with a comma
       # If at least 1 ID has not been entered the auto-tagging feature will not work
-      iapm-ids: '40825'
+      iapm-ids: ''
       # (Optional) Please insert the branch that should be tagged as "prod"
       prod-branch: 'main'
       # (Optional) Please indicate if this should be calculated for ASPN scoring entering true
