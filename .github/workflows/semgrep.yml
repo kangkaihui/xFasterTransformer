@@ -12,7 +12,6 @@
 name: Semgrep SAST
 
 on:
-  workflow_call:
   # Scan changed files in PRs (diff-aware scanning):
   pull_request: {}
 
@@ -40,12 +39,12 @@ jobs:
       # (Optional) Please insert the IAPM ID of the application here
       # If you have more than 1 IAPM ID, please separate them with a comma
       # If at least 1 ID has not been entered the auto-tagging feature will not work
-      iapm-ids: ''
+      iapm-ids: '40825'
       # (Optional) Please insert the branch that should be tagged as "prod"
       prod-branch: 'main'
       # (Optional) Please indicate if this should be calculated for ASPN scoring entering true
       # If set to true, the default branch will be tagged as prod and all other branches will be tagged as dev
-      prod-scan: 'true'
+      prod-scan: ''
       # (Optional) Enter any option command flags for debugging the scan or obtaining additional details
       # Example: '--verbose --max-target-bytes=500000'
       semgrep-flags: ''
