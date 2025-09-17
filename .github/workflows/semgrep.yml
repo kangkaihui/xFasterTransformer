@@ -1,4 +1,4 @@
-name: Call a reusable workflow and use its outputs
+name: Reusable workflow example
 
 on:
   workflow_call:
@@ -7,16 +7,14 @@ on:
         required: true
         type: string
     secrets:
-      personal_access_token:
+      token:
         required: true
-  workflow_dispatch: {}
-  push:
-    branches: ["main"]
+
 jobs:
-  call-workflow:
-    uses: kangkaihui/xFasterTransformer@main
-    with:
-     prod-branch: 'main'
-     prod-scan: 'true'
-    secrets:
-      SEMGREP_APP_TOKEN: ${{ secrets.SEMGREP_APP_TOKEN }}
+  triage:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: kangkaihui/xFasterTransformer/.github/workflows/semgrep.yml@main
+      with:
+        repo-token: ${{ secrets.token }}
+        configuration-path: ${{ inputs.config-path }}
