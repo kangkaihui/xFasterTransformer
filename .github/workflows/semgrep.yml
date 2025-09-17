@@ -13,8 +13,7 @@ on:
 jobs:
   triage:
     runs-on: ubuntu-latest
-    steps:
-    - uses: kangkaihui/xFasterTransformer/.github/workflows/semgrep.yml@main
+    uses: kangkaihui/xFasterTransformer/.github/workflows/semgrep.yml@main
       with:
         repo-token: ${{ secrets.token }}
         configuration-path: ${{ inputs.config-path }}
