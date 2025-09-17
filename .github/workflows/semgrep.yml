@@ -1,10 +1,9 @@
-name: Call a reusable workflow
+name: Call a reusable workflow and use its outputs
 
 on:
-  pull_request:
-    branches:
-      - main
+  workflow_dispatch:
 
 jobs:
   call-workflow:
     uses: kangkaihui/xFasterTransformer/.github/workflows/semgrep.yml@main
+
