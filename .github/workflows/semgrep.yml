@@ -5,10 +5,18 @@ on:
     inputs:
       config-path:
         required: true
-        
-  workflow_dispatch:
-
+        type: string
+    secrets:
+      personal_access_token:
+        required: true
+  workflow_dispatch: {}
+  push:
+    branches: ["main"]
 jobs:
   call-workflow:
     uses: kangkaihui/xFasterTransformer/.github/workflows/semgrep.yml@main
-
+    with:
+     prod-branch: 'main'
+     prod-scan: 'true'
+    secrets:
+      SEMGREP_APP_TOKEN: ${{ secrets.SEMGREP_APP_TOKEN }}
