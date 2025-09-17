@@ -14,7 +14,7 @@ on:
     branches: ["main"]
 jobs:
   call-workflow:
-    uses: kangkaihui/xFasterTransformer/.github/workflows/semgrep.yml@main
+    uses: kangkaihui/xFasterTransformer@main
     with:
      prod-branch: 'main'
      prod-scan: 'true'
